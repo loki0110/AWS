@@ -17,3 +17,37 @@ docker run -d --name myrvol_nginx -v myrevvol:/usr/share/nginx/html -p 80:80 ngi
 docker inspect myvol
 
 commands for exp 7 :
+sudo su 
+yum install docker -y
+systemctl start docker
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.24.7/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+mkdir dockerproject 
+cd dockerproject 
+nano docker-compose.yml
+
+yml file :
+
+version: '3.8'
+
+services:
+  ubuntu:
+    image: ununtu:latest
+    container_name: mycontainer1
+    command: sleep infinity
+
+  alpine:
+    image: alpine:latest
+    container_name: mycontainer2
+    command: sleep infinity 
+
+networks:
+  default:
+    driver: bridge
+
+
+
+docker-compose up -d
+
+if error stating mapping not allowed then check the colon and spaces of yml file.
