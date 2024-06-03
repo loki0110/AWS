@@ -7,5 +7,13 @@ wget https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core
 javac -cp .:junit-4.13.2.jar:hamcrest-core-1.3.jar src/Calculator.java test/CalculatorTest.java
 java -cp .:src:test:junit-4.13.2.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore CalculatorTest
 
-code for execution of container in 6th exp :
-docker run -d --name myrevvol_nginx -v myrevvol:/usr/share/nginx/html -p 80:80 nginx
+commands for execution of container in 6th exp :
+sudo su
+yum install docker -y
+systemctl start docker
+docker --version
+docker volume create myvol
+docker run -d --name myrvol_nginx -v myrevvol:/usr/share/nginx/html -p 80:80 nginx
+docker inspect myvol
+
+commands for exp 7 :
