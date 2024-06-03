@@ -6,3 +6,6 @@ wget https://repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar
 wget https://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
 javac -cp .:junit-4.13.2.jar:hamcrest-core-1.3.jar src/Calculator.java test/CalculatorTest.java
 java -cp .:src:test:junit-4.13.2.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore CalculatorTest
+
+code for execution of container in 6th exp :
+docker run -d --name myrevvol_nginx -v myrevvol:/usr/share/nginx/html -p 80:80 nginx
