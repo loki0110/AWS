@@ -51,3 +51,18 @@ networks:
 docker-compose up -d
 
 if error stating mapping not allowed then check the colon and spaces of yml file.
+
+
+exp 10 user data :
+
+#!bin/bash
+
+yum update -y
+
+yum install httpd -y
+
+echo "<h1>This is from $(hostname -f)</h1>" > /var/www/html/index.html
+
+systemctl enable httpd  
+
+systemctl start httpd
